@@ -69,11 +69,19 @@ public class Camera<Pixel : CameraPixel> {
             throw CameraError(message: "No camera device found.")
         }
         
-        do {
+       /* do {
             try! device.lockForConfiguration()
             device.setExposureModeCustom(duration: CMTimeMakeWithSeconds(0.001, 1000*1000*1000), iso: 1840, completionHandler: nil)
             device.unlockForConfiguration()
-        } 
+        }*/
+        do{
+            try device.lockForConfiguration()
+            defer{
+                device.unlockForConfiguration()
+            }
+            device.exposureMode = .custom
+            device.setExposureModeCustom(duration: CMTimeMakeWithSeconds(0.001, 1000*1000*1000), iso: 1840.0, completionHandler: nil)
+        }
         do {
             try! device.lockForConfiguration()
             defer { device.unlockForConfiguration() }
