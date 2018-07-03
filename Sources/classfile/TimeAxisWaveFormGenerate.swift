@@ -11,34 +11,34 @@ import EasyImagy
 
 public class TimeAxisWaveFormGenerate: NSObject {
     //extract TimeAxisWaveForm from Image
-    public class func extractRTimeAxisWaveFormFromImage(inputImage:Image<RGBA<UInt8>>)->Array<UInt64>
+    public class func extractRTimeAxisWaveFormFromImage(inputImage:Image<RGBA<UInt8>>)->Array<Double>
     {
-        var timeAxisWaveForm:Array<UInt64> = Array(repeating: 0, count: inputImage.width)
+        var timeAxisWaveForm:Array<Double> = Array(repeating: 0, count: inputImage.width)
         for w in 0..<inputImage.width{
             for h in 0..<inputImage.height{
-                timeAxisWaveForm[w] += UInt64(inputImage[w,h].redInt)
+                timeAxisWaveForm[w] += Double(inputImage[w,h].redInt)
             }
         }
         return timeAxisWaveForm
     }
     
-    public class func extractGTimeAxisWaveFormFromImage(inputImage:Image<RGBA<UInt8>>)->Array<UInt64>
+    public class func extractGTimeAxisWaveFormFromImage(inputImage:Image<RGBA<UInt8>>)->Array<Double>
     {
-        var timeAxisWaveForm:Array<UInt64> = Array(repeating: 0, count: inputImage.width)
+        var timeAxisWaveForm:Array<Double> = Array(repeating: 0, count: inputImage.width)
         for w in 0..<inputImage.width{
             for h in 0..<inputImage.height{
-                timeAxisWaveForm[w] += UInt64(inputImage[w,h].greenInt)
+                timeAxisWaveForm[w] += Double(inputImage[w,h].greenInt)
             }
         }
         return timeAxisWaveForm
     }
     
-    public class func extractBTimeAxisWaveFormFromImage(inputImage:Image<RGBA<UInt8>>)->Array<UInt64>
+    public class func extractBTimeAxisWaveFormFromImage(inputImage:Image<RGBA<UInt8>>)->Array<Double>
     {
         var timeAxisWaveForm:Array<UInt64> = Array(repeating: 0, count: inputImage.width)
         for w in 0..<inputImage.width{
             for h in 0..<inputImage.height{
-                timeAxisWaveForm[w] += UInt64(inputImage[w,h].blueInt)
+                timeAxisWaveForm[w] += Double(inputImage[w,h].blueInt)
             }
         }
         return timeAxisWaveForm
