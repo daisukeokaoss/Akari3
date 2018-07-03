@@ -9,9 +9,9 @@
 import UIKit
 import EasyImagy
 
-class TimeAxisWaveFormGenerate: NSObject {
+public class TimeAxisWaveFormGenerate: NSObject {
     //extract TimeAxisWaveForm from Image
-    class func extractRTimeAxisWaveFormFromImage(inputImage:Image<RGBA<UInt8>>)->Array<UInt64>
+    public class func extractRTimeAxisWaveFormFromImage(inputImage:Image<RGBA<UInt8>>)->Array<UInt64>
     {
         var timeAxisWaveForm:Array<UInt64> = Array(repeating: 0, count: inputImage.width)
         for w in 0..<inputImage.width{
@@ -22,7 +22,7 @@ class TimeAxisWaveFormGenerate: NSObject {
         return timeAxisWaveForm
     }
     
-    class func extractGTimeAxisWaveFormFromImage(inputImage:Image<RGBA<UInt8>>)->Array<UInt64>
+    public class func extractGTimeAxisWaveFormFromImage(inputImage:Image<RGBA<UInt8>>)->Array<UInt64>
     {
         var timeAxisWaveForm:Array<UInt64> = Array(repeating: 0, count: inputImage.width)
         for w in 0..<inputImage.width{
@@ -33,7 +33,7 @@ class TimeAxisWaveFormGenerate: NSObject {
         return timeAxisWaveForm
     }
     
-    class func extractBTimeAxisWaveFormFromImage(inputImage:Image<RGBA<UInt8>>)->Array<UInt64>
+    public class func extractBTimeAxisWaveFormFromImage(inputImage:Image<RGBA<UInt8>>)->Array<UInt64>
     {
         var timeAxisWaveForm:Array<UInt64> = Array(repeating: 0, count: inputImage.width)
         for w in 0..<inputImage.width{

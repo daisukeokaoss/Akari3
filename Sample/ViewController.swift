@@ -3,6 +3,7 @@ import AVFoundation
 import EasyCamery
 import EasyImagy
 
+
 class ViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     
@@ -13,6 +14,7 @@ class ViewController: UIViewController {
         
         camera.start { [weak self] image in
             // Makes `image` negative
+            image = (self?.plotTimeAxisWaveForm(inputImage: image))!
             image.update { pixel in
                 //pixel.red = 255 - pixel.red
                 //pixel.green = 255 - pixel.green
@@ -21,6 +23,12 @@ class ViewController: UIViewController {
             
             self?.imageView.image = image.uiImage(orientedTo: UIApplication.shared.cameraOrientation)
         }
+    }
+    
+    func plotTimeAxisWaveForm(inputImage:Image<RGBA<UInt8>>)->Image<RGBA<UInt8>>
+    {
+        let timeAxisWaveFrom = TimeAxisWaveFormGenerate.extractRTimeAxisWaveFormFromImage(inputImage: inputImage)
+        return TimeAxisWaveFormPlot.plotTimeAxisWaveFormR(inputImage: inputImage, timeAxisWaveForm: timeAxisWaveFrom)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
