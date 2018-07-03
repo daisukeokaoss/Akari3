@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		702BD5C320EA805F0001757D /* TimeAxisWaveFormGenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702BD5C220EA805F0001757D /* TimeAxisWaveFormGenerate.swift */; };
 		702BD5C620EAF15F0001757D /* TimeAxisWaveFormPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702BD5C520EAF15F0001757D /* TimeAxisWaveFormPlot.swift */; };
+		702BD5C820EB2BEF0001757D /* ImageToSpectrumByFFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702BD5C720EB2BEF0001757D /* ImageToSpectrumByFFT.swift */; };
 		D6ECC47D20E33EAC0042561B /* EasyCamery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6ECC47320E33EAC0042561B /* EasyCamery.framework */; };
 		D6ECC49220E33F390042561B /* EasyCamery.h in Headers */ = {isa = PBXBuildFile; fileRef = D6ECC48F20E33F390042561B /* EasyCamery.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D6ECC49320E33F390042561B /* EasyCamery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ECC49020E33F390042561B /* EasyCamery.swift */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		702BD5C220EA805F0001757D /* TimeAxisWaveFormGenerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAxisWaveFormGenerate.swift; sourceTree = "<group>"; };
 		702BD5C520EAF15F0001757D /* TimeAxisWaveFormPlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAxisWaveFormPlot.swift; sourceTree = "<group>"; };
+		702BD5C720EB2BEF0001757D /* ImageToSpectrumByFFT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageToSpectrumByFFT.swift; sourceTree = "<group>"; };
 		D6ECC47320E33EAC0042561B /* EasyCamery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EasyCamery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6ECC47C20E33EAC0042561B /* EasyCameryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyCameryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6ECC48F20E33F390042561B /* EasyCamery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyCamery.h; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				702BD5C220EA805F0001757D /* TimeAxisWaveFormGenerate.swift */,
 				702BD5C520EAF15F0001757D /* TimeAxisWaveFormPlot.swift */,
+				702BD5C720EB2BEF0001757D /* ImageToSpectrumByFFT.swift */,
 			);
 			path = classfile;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6ECC49320E33F390042561B /* EasyCamery.swift in Sources */,
+				702BD5C820EB2BEF0001757D /* ImageToSpectrumByFFT.swift in Sources */,
 				702BD5C320EA805F0001757D /* TimeAxisWaveFormGenerate.swift in Sources */,
 				702BD5C620EAF15F0001757D /* TimeAxisWaveFormPlot.swift in Sources */,
 			);
