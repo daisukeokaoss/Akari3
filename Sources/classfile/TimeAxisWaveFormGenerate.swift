@@ -35,7 +35,7 @@ public class TimeAxisWaveFormGenerate: NSObject {
     
     public class func extractBTimeAxisWaveFormFromImage(inputImage:Image<RGBA<UInt8>>)->Array<Double>
     {
-        var timeAxisWaveForm:Array<UInt64> = Array(repeating: 0, count: inputImage.width)
+        var timeAxisWaveForm:Array<Double> = Array(repeating: 0, count: inputImage.width)
         for w in 0..<inputImage.width{
             for h in 0..<inputImage.height{
                 timeAxisWaveForm[w] += Double(inputImage[w,h].blueInt)

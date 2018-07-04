@@ -10,7 +10,7 @@ import UIKit
 import EasyImagy
 
 public class TimeAxisWaveFormPlot: NSObject {
-    public class func plotTimeAxisWaveFormR(inputImage:Image<RGBA<UInt8>>,timeAxisWaveForm:Array<UInt64>)->Image<RGBA<UInt8>>
+    public class func plotTimeAxisWaveFormR(inputImage:Image<RGBA<UInt8>>,timeAxisWaveForm:Array<Double>)->Image<RGBA<UInt8>>
     {
         let maxGaugeOfGraph = inputImage.height * 255
         
@@ -28,7 +28,7 @@ public class TimeAxisWaveFormPlot: NSObject {
         return outputImage
     }
     
-    public class func plotTimeAxisWaveFormG(inputImage:Image<RGBA<UInt8>>,timeAxisWaveForm:Array<UInt64>)->Image<RGBA<UInt8>>
+    public class func plotTimeAxisWaveFormG(inputImage:Image<RGBA<UInt8>>,timeAxisWaveForm:Array<Double>)->Image<RGBA<UInt8>>
     {
         let maxGaugeOfGraph = inputImage.height * 255
         
@@ -45,7 +45,7 @@ public class TimeAxisWaveFormPlot: NSObject {
         }
         return outputImage
     }
-    public class func plotTimeAxisWaveFormB(inputImage:Image<RGBA<UInt8>>,timeAxisWaveForm:Array<UInt64>)->Image<RGBA<UInt8>>
+    public class func plotTimeAxisWaveFormB(inputImage:Image<RGBA<UInt8>>,timeAxisWaveForm:Array<Double>)->Image<RGBA<UInt8>>
     {
         let maxGaugeOfGraph = inputImage.height * 255
         

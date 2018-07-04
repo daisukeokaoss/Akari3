@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     func plotTimeAxisWaveForm(inputImage:Image<RGBA<UInt8>>)->Image<RGBA<UInt8>>
     {
         //let timeAxisWaveFrom = TimeAxisWaveFormGenerate.extractRTimeAxisWaveFormFromImage(inputImage: inputImage)
-        let Spectrum = 
+        let timeAxisWaveFrom = ImageToSpectrumByFFT.ImageToSpectrumByFFTFunctionR(inputImage: inputImage)
         return TimeAxisWaveFormPlot.plotTimeAxisWaveFormR(inputImage: inputImage, timeAxisWaveForm: timeAxisWaveFrom)
     }
     
