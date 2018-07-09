@@ -29,9 +29,23 @@ public class ImageToSpectrumByFFT: NSObject {
         return FFTTimeAxisWaveForm(timeAxisWaveForm: timeAxisWaveForm)
     }
     
+    public class func ImageToSpectrumByFFTFunctionWhite(inputImage:Image<RGBA<UInt8>>)->Array<Double>
+    {
+        let timeAxisWaveForm = TimeAxisWaveFormGenerate.extractWhiteTimeAxisWaveFormFromImage(inputImage: inputImage)
+        return FFTTimeAxisWaveForm(timeAxisWaveForm: timeAxisWaveForm)
+    }
+    
     public class func FFTTimeAxisWaveForm(timeAxisWaveForm:Array<Double>)->Array<Double>
     {
         //ここは、FFTをするルーチン、書き換えるかもしれない
-        return fft(timeAxisWaveForm)
+        var wave = timeAxisWaveForm
+        if(timeAxisWaveForm.count != 1024){
+            var initial = timeAxisWaveForm.count
+            while(initial < 1024){
+                wave.append(Double(0.0))
+                initial += 1
+            }
+        }
+        return fft(wave)
     }
 }

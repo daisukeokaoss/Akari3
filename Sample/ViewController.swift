@@ -8,27 +8,35 @@ class ViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     
     private let camera: Camera<RGBA<UInt8>> = try! Camera(sessionPreset: .vga640x480, focusMode: .continuousAutoFocus)
-    
+    private var FFTCount = 0;
+    private var MAXFFTCount = 10;
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         camera.start { [weak self] image in
             // Makes `image` negative
-            image = (self?.plotTimeAxisWaveForm(inputImage: image))!
+           
             image.update { pixel in
                 //pixel.red = 255 - pixel.red
                 //pixel.green = 255 - pixel.green
                 //pixel.blue = 255 -
             }
             
-            self?.imageView.image = image.uiImage(orientedTo: UIApplication.shared.cameraOrientation)
+            if(self?.FFTCount == 0){
+                 image = (self?.plotTimeAxisWaveForm(inputImage: image))!
+                self?.imageView.image = image.uiImage(orientedTo: UIApplication.shared.cameraOrientation)
+                self?.FFTCount = (self?.MAXFFTCount)!;
+            }
+            self?.FFTCount -= 1
+            
+            
         }
     }
     
     func plotTimeAxisWaveForm(inputImage:Image<RGBA<UInt8>>)->Image<RGBA<UInt8>>
     {
         //let timeAxisWaveFrom = TimeAxisWaveFormGenerate.extractRTimeAxisWaveFormFromImage(inputImage: inputImage)
-        let timeAxisWaveFrom = ImageToSpectrumByFFT.ImageToSpectrumByFFTFunctionR(inputImage: inputImage)
+        let timeAxisWaveFrom = ImageToSpectrumByFFT.ImageToSpectrumByFFTFunctionWhite(inputImage: inputImage)
         return TimeAxisWaveFormPlot.plotTimeAxisWaveFormR(inputImage: inputImage, timeAxisWaveForm: timeAxisWaveFrom)
     }
     
